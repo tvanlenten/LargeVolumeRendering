@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="includes\OpenGL\Buffer.h" />
+    <ClInclude Include="includes\OpenGL\Camera.h" />
+    <ClInclude Include="includes\OpenGL\Control.h" />
+    <ClInclude Include="includes\OpenGL\FrameBuffer.h" />
+    <ClInclude Include="includes\OpenGL\Input.h" />
+    <ClInclude Include="includes\OpenGL\Mesh.h" />
+    <ClInclude Include="includes\OpenGL\OpenGL.h" />
+    <ClInclude Include="includes\OpenGL\Shader.h" />
+    <ClInclude Include="includes\OpenGL\Slider.h" />
+    <ClInclude Include="includes\OpenGL\Text.h" />
+    <ClInclude Include="includes\OpenGL\Texture.h" />
+    <ClInclude Include="includes\SDF\signedDistanceFields.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="includes\draw.cpp" />
+  </ItemGroup>
+</Project>

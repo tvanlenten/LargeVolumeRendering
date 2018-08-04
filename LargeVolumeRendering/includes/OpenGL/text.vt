@@ -1,0 +1,30 @@
+#version 430 core
+layout (location = 0) in vec2 position;
+layout (location = 1) in vec2 texCoords;
+
+layout (location = 2) in float textID;
+
+out vec2 TexCoords;
+
+uniform vec2 textPos;
+uniform float aspectRatio;
+uniform float size;
+uniform float space;
+
+/*
+	Should use chars as input from layout 2 to save space
+*/
+
+void main() {
+	//calc vertex coords for text
+	vec2 p = position + vec2(gl_InstanceID*space, -1.0);
+	p = vec2(p.x*aspectRatio, p.y)*size*2.0;
+	p += vec2(-1.0,1.0) + vec2(textPos.x,-textPos.y);
+	gl_Position = vec4(p, 0.0, 1.0); 
+
+	//calc tex coords for text
+	int id = int(textID);
+	vec2 coord = vec2(id % 16, id / 16) / 16.0;
+	coord = coord + vec2(texCoords.x, 1.0 - texCoords.y) / 16.0;
+    TexCoords = coord;
+} 

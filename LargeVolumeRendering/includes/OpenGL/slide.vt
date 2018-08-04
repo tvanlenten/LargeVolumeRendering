@@ -1,0 +1,26 @@
+#version 430 core
+layout (location = 0) in vec2 position;
+layout (location = 1) in vec2 texCoords;
+
+layout (location = 2) in float val;
+
+out vec2 TexCoords;
+out float Val;
+
+uniform vec2 Pos;
+uniform float aspectRatio;
+uniform float size;
+uniform float space;
+
+
+void main() {
+	vec2 p = position + vec2(gl_InstanceID*space, -1.0);
+
+	p = vec2(p.x*aspectRatio, p.y)*size*2.0;
+	p += vec2(-1.0,1.0) + vec2(Pos.x,-Pos.y);
+	gl_Position = vec4(p, 0.0, 1.0);
+
+	Val = val;
+
+    TexCoords = texCoords;
+} 

@@ -1,0 +1,26 @@
+#version 430 core
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec2 texCoords;
+
+out vec2 uv;
+out vec3 uvw;
+out vec4 ChunkCoord;
+out vec4 MemoryCoord;
+
+uniform mat4 view;
+uniform mat4 projection;
+
+void main() {
+    uv = vec2(texCoords.x, 1.0 - texCoords.y);
+	vec3 p = vec3(gl_InstanceID % 16, gl_InstanceID / (16*16), (gl_InstanceID / 16) % 16);
+	uvw = position;
+
+
+	float f = 1.0/16.0;
+
+	float scale = 1.0;
+	ChunkCoord = vec4(p*scale, scale); //will be provided in layout
+	MemoryCoord = vec4(p*f, f); //will be proved in layout
+
+	gl_Position = projection * view * vec4((position + p)*scale, 1.0f);
+} 
