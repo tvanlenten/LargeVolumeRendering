@@ -29,6 +29,7 @@ int main() {
 	SSBO.bindTo(3);
 	SSBO.unbind();
 
+
 	free(data);
 
 
