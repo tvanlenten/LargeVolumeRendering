@@ -90,7 +90,7 @@ float map(vec3 p) {
 	
 	float d = sdPlane(p,vec4(0.0,1.0,0.0,0.0));
 
-	for(int i = 0; i < 16; i+=3) {
+	for(int i = 0; i < 32; i+=3) {
 		//d = smin(d, sdSphere(p - data[i], 0.1));
 		vec2 uv;
 		d = smin(d, sdBezier(vec3(0.0), data[i+1]*5.0, data[i+2]*5.0, p, uv).x);

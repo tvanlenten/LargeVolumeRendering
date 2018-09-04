@@ -32,6 +32,7 @@ int main() {
 	free(data);
 
 
+
 	Texture tex("textures/test.png", GL_REPEAT, GL_REPEAT, GL_LINEAR_MIPMAP_LINEAR, GL_LINEAR, true);
 	shader.use();
 	shader.setInt("tex", 0);
