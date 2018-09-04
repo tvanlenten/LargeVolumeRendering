@@ -88,6 +88,10 @@ public:
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL); 
 	}
 
+	double getTime() {
+		return glfwGetTime();
+	}
+
 	~Control() { glfwTerminate(); }
 private:
 	GLFWwindow* window;

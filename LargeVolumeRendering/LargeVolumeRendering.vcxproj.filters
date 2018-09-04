@@ -13,8 +13,42 @@
     <ClInclude Include="includes\OpenGL\Text.h" />
     <ClInclude Include="includes\OpenGL\Texture.h" />
     <ClInclude Include="includes\SDF\signedDistanceFields.h" />
+    <ClInclude Include="includes\SDF\chunkManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="includes\draw.cpp" />
+    <ClCompile Include="includes\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\testVolume.frag" />
+    <None Include="shaders\volumeRender.frag" />
+    <None Include="shaders\volumeDebug.frag" />
+    <None Include="shaders\SDF.frag" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\earth.jpg" />
+    <Image Include="textures\earth_normal.jpg" />
+    <Image Include="textures\face.jpg" />
+    <Image Include="textures\font.png" />
+    <Image Include="textures\grass.jpg" />
+    <Image Include="textures\ground.jpg" />
+    <Image Include="textures\moon.jpg" />
+    <Image Include="textures\obama.jpg" />
+    <Image Include="textures\snow.jpg" />
+    <Image Include="textures\t1.jpg" />
+    <Image Include="textures\t2.jpg" />
+    <Image Include="textures\t3.jpg" />
+    <Image Include="textures\test.png" />
+    <Image Include="textures\skybox\back.jpg" />
+    <Image Include="textures\skybox\down.jpg" />
+    <Image Include="textures\skybox\front.jpg" />
+    <Image Include="textures\skybox\left.jpg" />
+    <Image Include="textures\skybox\nx.jpg" />
+    <Image Include="textures\skybox\ny.jpg" />
+    <Image Include="textures\skybox\nz.jpg" />
+    <Image Include="textures\skybox\px.jpg" />
+    <Image Include="textures\skybox\py.jpg" />
+    <Image Include="textures\skybox\pz.jpg" />
+    <Image Include="textures\skybox\right.jpg" />
+    <Image Include="textures\skybox\up.jpg" />
   </ItemGroup>
 </Project>

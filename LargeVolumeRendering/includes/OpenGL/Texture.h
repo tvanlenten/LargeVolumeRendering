@@ -49,7 +49,7 @@ public:
 		glBindTexture(type, 0);
 	}
 	Texture(GLenum intFormat, GLenum thisFormat, GLenum thisDataType, int width, int height, 
-		GLenum param1, GLenum param2, unsigned char* image, bool mipmap) {
+		GLenum wrap, GLenum filter, unsigned char* image, bool mipmap) {
 		type = GL_TEXTURE_2D;
 		internalFormat = intFormat;
 		dataType = thisDataType;
@@ -58,14 +58,14 @@ public:
 		glBindTexture(type, ID);
 		glTexImage2D(type, 0, internalFormat, width, height, 0, format, dataType, image);
 		if (mipmap)glGenerateMipmap(type);
-		glTexParameteri(type, GL_TEXTURE_WRAP_S, param1);
-		glTexParameteri(type, GL_TEXTURE_WRAP_T, param1);
-		glTexParameteri(type, GL_TEXTURE_MIN_FILTER, param2);
-		glTexParameteri(type, GL_TEXTURE_MAG_FILTER, param2);
+		glTexParameteri(type, GL_TEXTURE_WRAP_S, wrap);
+		glTexParameteri(type, GL_TEXTURE_WRAP_T, wrap);
+		glTexParameteri(type, GL_TEXTURE_MIN_FILTER, filter);
+		glTexParameteri(type, GL_TEXTURE_MAG_FILTER, filter);
 		glBindTexture(type, 0);
 	}
 	Texture(GLenum intFormat, GLenum thisFormat, GLenum thisDataType, int x, int y, int z,
-		GLenum param1, GLenum param2, unsigned char* image, bool mipmap) {
+		GLenum wrap, GLenum filter, void* image, bool mipmap) {
 		type = GL_TEXTURE_3D;
 		internalFormat = intFormat;
 		dataType = thisDataType;
@@ -74,10 +74,10 @@ public:
 		glBindTexture(type, ID);
 		glTexImage3D(type, 0, internalFormat, x, y, z, 0, format, dataType, image);
 		if (mipmap)glGenerateMipmap(type);
-		glTexParameteri(type, GL_TEXTURE_WRAP_S, param1);
-		glTexParameteri(type, GL_TEXTURE_WRAP_T, param1);
-		glTexParameteri(type, GL_TEXTURE_MIN_FILTER, param2);
-		glTexParameteri(type, GL_TEXTURE_MAG_FILTER, param2);
+		glTexParameteri(type, GL_TEXTURE_WRAP_S, wrap);
+		glTexParameteri(type, GL_TEXTURE_WRAP_T, wrap);
+		glTexParameteri(type, GL_TEXTURE_MIN_FILTER, filter);
+		glTexParameteri(type, GL_TEXTURE_MAG_FILTER, filter);
 		glBindTexture(type, 0);
 	}
 
@@ -96,6 +96,7 @@ public:
 	void bind() { glBindTexture(type, ID); }
 
 	int getID() { return ID; }
+
 	void use(GLuint tex) {
 		glActiveTexture(GL_TEXTURE0 + tex);
 		glBindTexture(type, ID);
