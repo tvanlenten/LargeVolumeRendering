@@ -1,8 +1,8 @@
 # LargeVolumeRendering
-This is an ongoing active project recently added to GitHub!
+This project was mainly to experiment and learn more about volume rendering in OpenGL.
 
 ## Goal
-The goal of this project is to allow for a user to simply create, visualize, and save volume data.
+To research how to do volume rendering and to make an OpenGL/GLEW framework that allows me to work faster.
 
 ## How it works
 Firstly, the volume data is represented using signed distance fields(SDF's).  SDF's are great for volume representation for several reasons.  They are easy to perform constructive solid geometry(CSG) which allows for easy to understand tools.  SDF's are also very easy to render using ray marching which can be relatively fast if optimized.  SDF's also are useful for many other shading techniques as well as useful for physics simulations to determine collisions.  
